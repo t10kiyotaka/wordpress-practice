@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html <?php language_attributes(); ?>>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width">
     <title>BLOG - MY PORTFOLIO</title>
-    <link href="../style.css" rel="stylesheet"/>
+    <link href="<?php echo esc_url( get_stylesheet_uri() ); ?>" rel="stylesheet"/>
+    <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 <!-- ▼ ヘッダー : 開始-->
 <header class="l-header">
-    <div class="c-header-description">田中太郎のポートフォリオサイト</div>
-    <a class="c-logo" href="../">
+    <div class="c-header-description"><?php bloginfo('description'); ?></div>
+    <a class="c-logo" href="<?php echo esc_url( home_url('/') ); ?>">
         <div class="c-logo__image">
-            <img src="../images/logo.png" alt="MY PORTFOLIO">
+            <img src="<?php echo esc_url( get_theme_file_uri('images/logo.png') ); ?>" alt="<?php bloginfo('name'); ?>">
         </div>
-        <div class="c-logo__text">MY PORTFOLIO</div>
+        <div class="c-logo__text"><?php bloginfo('name'); ?></div>
     </a>
     <div class="c-global-nav">
         <ul>
             <li>
-                <a href="../">HOME</a>
+                <a href="<?php echo esc_url( home_url('/') ); ?>">HOME</a>
             </li>
             <li>
-                <a href="../profile/">PROFILE</a>
+                <a href="<?php echo esc_url( home_url('/portfolio/') ); ?>">PROFILE</a>
             </li>
             <li>
-                <a href="../blog/">BLOG</a>
+                <a href="<?php echo esc_url( home_url('/blog/') ); ?>">BLOG</a>
             </li>
             <li>
-                <a href="../contact/">CONTACT</a>
+                <a href="<?php echo esc_url( home_url('/contact/') ); ?>">CONTACT</a>
             </li>
         </ul>
     </div>
@@ -45,7 +46,7 @@
                     <article class="hentry">
                         <div class="hentry-thumbnail">
                             <a href="../blog/01/">
-                                <img src="../images/img-default.png" alt="">
+                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
                             </a>
                         </div>
                         <div class="hentry-content">
@@ -85,7 +86,7 @@
                     <article class="hentry">
                         <div class="hentry-thumbnail">
                             <a href="../blog/01/">
-                                <img src="../images/img-default.png" alt="">
+                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
                             </a>
                         </div>
                         <div class="hentry-content">
@@ -125,7 +126,7 @@
                     <article class="hentry">
                         <div class="hentry-thumbnail">
                             <a href="../blog/01/">
-                                <img src="../images/img-default.png" alt="">
+                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
                             </a>
                         </div>
                         <div class="hentry-content">
@@ -165,7 +166,7 @@
                     <article class="hentry">
                         <div class="hentry-thumbnail">
                             <a href="../blog/01/">
-                                <img src="../images/img-default.png" alt="">
+                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
                             </a>
                         </div>
                         <div class="hentry-content">
@@ -205,7 +206,7 @@
                     <article class="hentry">
                         <div class="hentry-thumbnail">
                             <a href="../blog/01/">
-                                <img src="../images/img-default.png" alt="">
+                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
                             </a>
                         </div>
                         <div class="hentry-content">
@@ -245,7 +246,7 @@
                     <article class="hentry">
                         <div class="hentry-thumbnail">
                             <a href="../blog/01/">
-                                <img src="../images/img-default.png" alt="">
+                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
                             </a>
                         </div>
                         <div class="hentry-content">
@@ -285,7 +286,7 @@
                     <article class="hentry">
                         <div class="hentry-thumbnail">
                             <a href="../blog/01/">
-                                <img src="../images/img-default.png" alt="">
+                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
                             </a>
                         </div>
                         <div class="hentry-content">
@@ -325,7 +326,7 @@
                     <article class="hentry">
                         <div class="hentry-thumbnail">
                             <a href="../blog/01/">
-                                <img src="../images/img-default.png" alt="">
+                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
                             </a>
                         </div>
                         <div class="hentry-content">
@@ -397,18 +398,19 @@
 <!-- ▼ フッター : 開始-->
 <footer class="l-footer">
     <div class="l-container">
-        <p class="c-footer-description">田中太郎のポートフォリオサイト</p>
+        <p class="c-footer-description"><?php bloginfo('description'); ?></p>
         <a class="c-logo is-white" href="../">
             <div class="c-logo__image">
-                <img src="../images/logo.png" alt="MY PORTFOLIO">
+                <img src="../images/logo.png" alt="<?php bloginfo('name'); ?>">
             </div>
-            <div class="c-logo__text">MY PORTFOLIO</div>
+            <div class="c-logo__text"><?php bloginfo('name'); ?></div>
         </a>
     </div>
 </footer>
 <div class="c-copyright">
-    <p>Copyright © 2019 MY PORTFOLIO All Rights Reserved.</p>
+    <p>Copyright © 2019 <?php bloginfo('name'); ?> All Rights Reserved.</p>
 </div>
 <!-- ▲ フッター : 終了-->
+<?php wp_footer(); ?>
 </body>
 </html>
