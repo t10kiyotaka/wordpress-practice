@@ -3,8 +3,6 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width">
-    <title>BLOG - MY PORTFOLIO</title>
-    <link href="<?php echo esc_url( get_stylesheet_uri() ); ?>" rel="stylesheet"/>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
