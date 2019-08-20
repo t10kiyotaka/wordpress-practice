@@ -41,40 +41,38 @@
                 <h1 class="archive-title">BLOG</h1>
                 <div class="c-post-archive">
                     <!-- ▼ 投稿 : 開始-->
-                    <article class="hentry">
+                    <article <?php post_class(); ?>>
                         <div class="hentry-thumbnail">
-                            <a href="../blog/01/">
+                            <a href="<?php the_permalink(); ?>">
                                 <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
                             </a>
                         </div>
                         <div class="hentry-content">
                             <header class="entry-header">
                                 <div class="entry-meta">
-                                    <a href="../blog/01/">
+                                    <a href="<?php the_permalink(); ?>">
                                         <time class="entry-date published">
-                                            2019年3月1日
+                                            <?php the_time('Y年n月j日'); ?>
                                         </time>
                                     </a>
                                 </div>
                                 <h2 class="entry-title">
-                                    <a href="../blog/01/">
-                                        ここに投稿のタイトルが入ります。
+                                    <a href="<?php the_permalink(); ?>">
+                                        <?php the_title(); ?>
                                     </a>
                                 </h2>
                             </header>
                             <div class="entry-content">
-                                <p>ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります[…]</p>
+                                <?php the_excerpt(); ?>
                             </div>
                             <footer class="entry-footer">
                                 <span class="cat-tags-links">
                                     <span class="cat-links">
-                                        <a href="#" rel="category">学習記録</a>
-                                        <a href="#" rel="category">作品集</a>
+                                        <?php the_category('&nbsp;'); ?>
                                     </span>
                                     <span class="tags-links">
-                                        <a href="#" rel="tag">タグ1</a>
-                                        <a href="#" rel="tag">タグ2</a>
-                                    </span>
+                                        <?php the_tags('<span class="tags-links">', '&nbsp;', '</span>'); ?>
+                                    </span> 
                                 </span>
                             </footer>
                         </div>
