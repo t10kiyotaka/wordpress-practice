@@ -44,327 +44,55 @@
                     <?php the_archive_title('<h1 class="archive-title">', '</h1>'); ?>
                 <?php endif; ?>
                 <div class="c-post-archive">
-                    <!-- ▼ 投稿 : 開始-->
-                    <article <?php post_class(); ?>>
-                        <div class="hentry-thumbnail">
-                            <a href="<?php the_permalink(); ?>">
-                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
-                            </a>
-                        </div>
-                        <div class="hentry-content">
-                            <header class="entry-header">
-                                <div class="entry-meta">
+                    <?php if(have_posts()): ?>
+                        <?php while (have_posts()): ?>
+                            <?php the_post(); ?>
+                            <!-- ▼ 投稿 : 開始-->
+                            <article <?php post_class(); ?>>
+                                <div class="hentry-thumbnail">
                                     <a href="<?php the_permalink(); ?>">
-                                        <time class="entry-date published">
-                                            <?php the_time('Y年n月j日'); ?>
-                                        </time>
+                                        <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
                                     </a>
                                 </div>
-                                <h2 class="entry-title">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <?php the_title(); ?>
-                                    </a>
-                                </h2>
-                            </header>
-                            <div class="entry-content">
-                                <?php the_excerpt(); ?>
-                            </div>
-                            <footer class="entry-footer">
-                                <span class="cat-tags-links">
-                                    <span class="cat-links">
-                                        <?php the_category('&nbsp;'); ?>
-                                    </span>
-                                    <span class="tags-links">
-                                        <?php the_tags('<span class="tags-links">', '&nbsp;', '</span>'); ?>
-                                    </span> 
-                                </span>
-                            </footer>
-                        </div>
-                    </article>
-                    <!-- ▲ 投稿 : 終了-->
-                    <!-- ▼ 投稿 : 開始-->
-                    <article class="hentry">
-                        <div class="hentry-thumbnail">
-                            <a href="../blog/01/">
-                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
-                            </a>
-                        </div>
-                        <div class="hentry-content">
-                            <header class="entry-header">
-                                <div class="entry-meta">
-                                    <a href="../blog/01/">
-                                        <time class="entry-date published">
-                                            2019年3月1日
-                                        </time>
-                                    </a>
+                                <div class="hentry-content">
+                                    <header class="entry-header">
+                                        <div class="entry-meta">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <time class="entry-date published">
+                                                    <?php the_time('Y年n月j日'); ?>
+                                                </time>
+                                            </a>
+                                        </div>
+                                        <h2 class="entry-title">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php the_title(); ?>
+                                            </a>
+                                        </h2>
+                                    </header>
+                                    <div class="entry-content">
+                                        <?php the_excerpt(); ?>
+                                    </div>
+                                    <footer class="entry-footer">
+                                        <span class="cat-tags-links">
+                                            <span class="cat-links">
+                                                <?php the_category('&nbsp;'); ?>
+                                            </span>
+                                            <span class="tags-links">
+                                                <?php the_tags('<span class="tags-links">', '&nbsp;', '</span>'); ?>
+                                            </span> 
+                                        </span>
+                                    </footer>
                                 </div>
-                                <h2 class="entry-title">
-                                    <a href="../blog/01/">
-                                        ここに投稿のタイトルが入ります。
-                                    </a>
-                                </h2>
-                            </header>
-                            <div class="entry-content">
-                                <p>ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります[…]</p>
-                            </div>
-                            <footer class="entry-footer">
-                                <span class="cat-tags-links">
-                                    <span class="cat-links">
-                                        <a href="#" rel="category">学習記録</a>
-                                        <a href="#" rel="category">作品集</a>
-                                    </span>
-                                    <span class="tags-links">
-                                        <a href="#" rel="tag">タグ1</a>
-                                        <a href="#" rel="tag">タグ2</a>
-                                    </span>
-                                </span>
-                            </footer>
-                        </div>
-                    </article>
-                    <!-- ▲ 投稿 : 終了-->
-                    <!-- ▼ 投稿 : 開始-->
-                    <article class="hentry">
-                        <div class="hentry-thumbnail">
-                            <a href="../blog/01/">
-                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
-                            </a>
-                        </div>
-                        <div class="hentry-content">
-                            <header class="entry-header">
-                                <div class="entry-meta">
-                                    <a href="../blog/01/">
-                                        <time class="entry-date published">
-                                            2019年3月1日
-                                        </time>
-                                    </a>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="../blog/01/">
-                                        ここに投稿のタイトルが入ります。
-                                    </a>
-                                </h2>
-                            </header>
-                            <div class="entry-content">
-                                <p>ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります[…]</p>
-                            </div>
-                            <footer class="entry-footer">
-                                <span class="cat-tags-links">
-                                    <span class="cat-links">
-                                        <a href="#" rel="category">学習記録</a>
-                                        <a href="#" rel="category">作品集</a>
-                                    </span>
-                                    <span class="tags-links">
-                                        <a href="#" rel="tag">タグ1</a>
-                                        <a href="#" rel="tag">タグ2</a>
-                                    </span>
-                                </span>
-                            </footer>
-                        </div>
-                    </article>
-                    <!-- ▲ 投稿 : 終了-->
-                    <!-- ▼ 投稿 : 開始-->
-                    <article class="hentry">
-                        <div class="hentry-thumbnail">
-                            <a href="../blog/01/">
-                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
-                            </a>
-                        </div>
-                        <div class="hentry-content">
-                            <header class="entry-header">
-                                <div class="entry-meta">
-                                    <a href="../blog/01/">
-                                        <time class="entry-date published">
-                                            2019年3月1日
-                                        </time>
-                                    </a>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="../blog/01/">
-                                        ここに投稿のタイトルが入ります。
-                                    </a>
-                                </h2>
-                            </header>
-                            <div class="entry-content">
-                                <p>ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります[…]</p>
-                            </div>
-                            <footer class="entry-footer">
-                                <span class="cat-tags-links">
-                                    <span class="cat-links">
-                                        <a href="#" rel="category">学習記録</a>
-                                        <a href="#" rel="category">作品集</a>
-                                    </span>
-                                    <span class="tags-links">
-                                        <a href="#" rel="tag">タグ1</a>
-                                        <a href="#" rel="tag">タグ2</a>
-                                    </span>
-                                </span>
-                            </footer>
-                        </div>
-                    </article>
-                    <!-- ▲ 投稿 : 終了-->
-                    <!-- ▼ 投稿 : 開始-->
-                    <article class="hentry">
-                        <div class="hentry-thumbnail">
-                            <a href="../blog/01/">
-                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
-                            </a>
-                        </div>
-                        <div class="hentry-content">
-                            <header class="entry-header">
-                                <div class="entry-meta">
-                                    <a href="../blog/01/">
-                                        <time class="entry-date published">
-                                            2019年3月1日
-                                        </time>
-                                    </a>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="../blog/01/">
-                                        ここに投稿のタイトルが入ります。
-                                    </a>
-                                </h2>
-                            </header>
-                            <div class="entry-content">
-                                <p>ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります[…]</p>
-                            </div>
-                            <footer class="entry-footer">
-                                <span class="cat-tags-links">
-                                    <span class="cat-links">
-                                        <a href="#" rel="category">学習記録</a>
-                                        <a href="#" rel="category">作品集</a>
-                                    </span>
-                                    <span class="tags-links">
-                                        <a href="#" rel="tag">タグ1</a>
-                                        <a href="#" rel="tag">タグ2</a>
-                                    </span>
-                                </span>
-                            </footer>
-                        </div>
-                    </article>
-                    <!-- ▲ 投稿 : 終了-->
-                    <!-- ▼ 投稿 : 開始-->
-                    <article class="hentry">
-                        <div class="hentry-thumbnail">
-                            <a href="../blog/01/">
-                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
-                            </a>
-                        </div>
-                        <div class="hentry-content">
-                            <header class="entry-header">
-                                <div class="entry-meta">
-                                    <a href="../blog/01/">
-                                        <time class="entry-date published">
-                                            2019年3月1日
-                                        </time>
-                                    </a>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="../blog/01/">
-                                        ここに投稿のタイトルが入ります。
-                                    </a>
-                                </h2>
-                            </header>
-                            <div class="entry-content">
-                                <p>ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります[…]</p>
-                            </div>
-                            <footer class="entry-footer">
-                                <span class="cat-tags-links">
-                                    <span class="cat-links">
-                                        <a href="#" rel="category">学習記録</a>
-                                        <a href="#" rel="category">作品集</a>
-                                    </span>
-                                    <span class="tags-links">
-                                        <a href="#" rel="tag">タグ1</a>
-                                        <a href="#" rel="tag">タグ2</a>
-                                    </span>
-                                </span>
-                            </footer>
-                        </div>
-                    </article>
-                    <!-- ▲ 投稿 : 終了-->
-                    <!-- ▼ 投稿 : 開始-->
-                    <article class="hentry">
-                        <div class="hentry-thumbnail">
-                            <a href="../blog/01/">
-                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
-                            </a>
-                        </div>
-                        <div class="hentry-content">
-                            <header class="entry-header">
-                                <div class="entry-meta">
-                                    <a href="../blog/01/">
-                                        <time class="entry-date published">
-                                            2019年3月1日
-                                        </time>
-                                    </a>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="../blog/01/">
-                                        ここに投稿のタイトルが入ります。
-                                    </a>
-                                </h2>
-                            </header>
-                            <div class="entry-content">
-                                <p>ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります[…]</p>
-                            </div>
-                            <footer class="entry-footer">
-                                <span class="cat-tags-links">
-                                    <span class="cat-links">
-                                        <a href="#" rel="category">学習記録</a>
-                                        <a href="#" rel="category">作品集</a>
-                                    </span>
-                                    <span class="tags-links">
-                                        <a href="#" rel="tag">タグ1</a>
-                                        <a href="#" rel="tag">タグ2</a>
-                                    </span>
-                                </span>
-                            </footer>
-                        </div>
-                    </article>
-                    <!-- ▲ 投稿 : 終了-->
-                    <!-- ▼ 投稿 : 開始-->
-                    <article class="hentry">
-                        <div class="hentry-thumbnail">
-                            <a href="../blog/01/">
-                                <img src="<?php echo esc_url( get_theme_file_uri('images/img-default.png') ); ?>" alt="">
-                            </a>
-                        </div>
-                        <div class="hentry-content">
-                            <header class="entry-header">
-                                <div class="entry-meta">
-                                    <a href="../blog/01/">
-                                        <time class="entry-date published">
-                                            2019年3月1日
-                                        </time>
-                                    </a>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="../blog/01/">
-                                        ここに投稿のタイトルが入ります。
-                                    </a>
-                                </h2>
-                            </header>
-                            <div class="entry-content">
-                                <p>ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります。ここに抜粋文が入ります[…]</p>
-                            </div>
-                            <footer class="entry-footer">
-                                <span class="cat-tags-links">
-                                    <span class="cat-links">
-                                        <a href="#" rel="category">学習記録</a>
-                                        <a href="#" rel="category">作品集</a>
-                                    </span>
-                                    <span class="tags-links">
-                                        <a href="#" rel="tag">タグ1</a>
-                                        <a href="#" rel="tag">タグ2</a>
-                                    </span>
-                                </span>
-                            </footer>
-                        </div>
-                    </article>
-                    <!-- ▲ 投稿 : 終了-->
-                    <!--▼ ページネーション : 開始-->
-                    <?php the_posts_pagination(); ?>
-                    <!--▲ ページネーション : 終了-->
+                            </article>
+                            <!-- ▲ 投稿 : 終了-->
+                        <?php endwhile; ?>
+
+                        <!--▼ ページネーション : 開始-->
+                        <?php the_posts_pagination(); ?>
+                        <!--▲ ページネーション : 終了-->
+                    <?php else: ?>
+                        <p>No content yet.</p>
+                    <?php endif; ?>
                 </div>
             </div>
             <!-- ▼ サイドバー : 開始-->
