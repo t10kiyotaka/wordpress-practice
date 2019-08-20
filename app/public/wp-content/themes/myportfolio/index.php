@@ -38,7 +38,11 @@
     <div class="l-main">
         <div class="l-container is-flex">
             <div class="l-contents">
-                <h1 class="archive-title">BLOG</h1>
+                <?php if(is_home()): ?>
+                    <h1 class="archive_title">BLOG</h1>
+                <?php else: ?>
+                    <?php the_archive_title('<h1 class="archive-title">', '</h1>'); ?>
+                <?php endif; ?>
                 <div class="c-post-archive">
                     <!-- ▼ 投稿 : 開始-->
                     <article <?php post_class(); ?>>
@@ -359,15 +363,7 @@
                     </article>
                     <!-- ▲ 投稿 : 終了-->
                     <!--▼ ページネーション : 開始-->
-                    <nav class="navigation pagination" role="navigation">
-                        <h2 class="screen-reader-text">投稿ナビゲーション</h2>
-                        <div class="nav-links">
-                            <span class='page-numbers current'>1</span>
-                            <a class='page-numbers' href='#'>2</a>
-                            <a class='page-numbers' href='#'>3</a>
-                            <a class="next page-numbers" href="#">次ページへ</a>
-                        </div>
-                    </nav>
+                    <?php the_posts_pagination(); ?>
                     <!--▲ ページネーション : 終了-->
                 </div>
             </div>
