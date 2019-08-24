@@ -17,6 +17,11 @@ function custom_theme_setup() {
 
   // Make embedded content responsive
   add_theme_support('responsive-embeds');
+
+  // Thumbnail
+  add_theme_support('post-thumbnails');
+  set_post_thumbnail_size(231, 177, false);
+
 }
 add_action('after_setup_theme', 'custom_theme_setup');
 
@@ -31,3 +36,17 @@ function myportfolio_scripts() {
   );
 }
 add_action('wp_enqueue_scripts', 'myportfolio_scripts');
+
+// Widget
+function custom_widget_register() {
+  register_sidebar(array(
+    'name' => 'サイドバーウィジェットエリア',
+    'id' => 'sidebar-widget',
+    'description' => 'ブログページのサイドバーに表示',
+    'before_widget' => '<div id="%1$s" class="c-widget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="c-widget__title">',
+    'after_title' => '</h2>',
+  ));
+}
+add_action('widgets_init', 'custom_widget_register');
