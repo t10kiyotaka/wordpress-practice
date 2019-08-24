@@ -15,21 +15,13 @@
         </div>
         <div class="c-logo__text"><?php bloginfo('name'); ?></div>
     </a>
-    <div class="c-global-nav">
-        <ul>
-            <li>
-                <a href="<?php echo esc_url( home_url('/') ); ?>">HOME</a>
-            </li>
-            <li>
-                <a href="<?php echo esc_url( home_url('/portfolio/') ); ?>">PROFILE</a>
-            </li>
-            <li>
-                <a href="<?php echo esc_url( home_url('/blog/') ); ?>">BLOG</a>
-            </li>
-            <li>
-                <a href="<?php echo esc_url( home_url('/contact/') ); ?>">CONTACT</a>
-            </li>
-        </ul>
-    </div>
+    <!-- Global navigation -->
+    <?php wp_nav_menu(
+        array(
+            'theme_location' => 'globalnav',
+            'container' => 'div',
+            'container_class' => 'c-global-nav',
+        )
+    ); ?>
 </header>
 <!-- ▲ ヘッダー : 終了-->

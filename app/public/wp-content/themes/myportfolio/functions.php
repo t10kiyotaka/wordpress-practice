@@ -22,6 +22,12 @@ function custom_theme_setup() {
   add_theme_support('post-thumbnails');
   set_post_thumbnail_size(231, 177, false);
 
+  // Activate Custom menu. And Set the position of the menu.
+  register_nav_menus(
+    array(
+      'globalnav' => 'グローバルナビゲーション',
+    )
+  );
 }
 add_action('after_setup_theme', 'custom_theme_setup');
 
